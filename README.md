@@ -32,7 +32,7 @@ C1O0CS02CG51B2:AndesAI edduarte$ npm -v
 ### Clonar repositorio
 
 ```
-git clone https://github.com/EduarDuarteS/AndesAI.git
+git clone git clone https://github.com/NetworkAI-UniAndes/Backend_challenge_2022_1.git
 ````
 
 
