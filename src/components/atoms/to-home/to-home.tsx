@@ -1,11 +1,11 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-import styles from './to-home.module.scss'
+import styles from './to-home.module.scss';
 
 export const ToHome = (props: { [key: string]: any }) => {
-  const classList: string = [props.className, styles['ui-to-home']].join(' ')
+  const classList: string = [props.className, styles['ui-to-home']].join(' ');
 
   return (
     <Link href="/">
@@ -19,5 +19,5 @@ export const ToHome = (props: { [key: string]: any }) => {
         />
       </a>
     </Link>
-  )
-}
+  );
+};

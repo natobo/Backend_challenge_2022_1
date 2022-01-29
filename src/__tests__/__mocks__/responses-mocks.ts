@@ -1,6 +1,6 @@
-import { SIGNATURE_AUTHOR } from '../../constants/author-signature'
-import { IInternalSearchResponse } from '../../interfaces/IInternalSearchResponse'
-import { IInternalItemResponse } from '../../interfaces/IInternalItemResponse'
+import { SIGNATURE_AUTHOR } from '../../constants/author-signature';
+import { IInternalSearchResponse } from '../../interfaces/IInternalSearchResponse';
+import { IInternalItemResponse } from '../../interfaces/IInternalItemResponse';
 
 export const InternalSearchResponse: IInternalSearchResponse = {
   author: SIGNATURE_AUTHOR,
@@ -47,7 +47,7 @@ export const InternalSearchResponse: IInternalSearchResponse = {
     { id: 'MLA430637', name: 'PC de Escritorio' },
     { id: 'MLA1649', name: 'PC' },
   ],
-}
+};
 
 export const InternalItemResponse: IInternalItemResponse = {
   author: SIGNATURE_AUTHOR,
@@ -97,4 +97,4 @@ export const InternalItemResponse: IInternalItemResponse = {
       { id: 'MLA1649', name: 'PC' },
     ],
   },
-}
+};

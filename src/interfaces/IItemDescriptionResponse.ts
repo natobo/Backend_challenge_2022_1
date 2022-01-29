@@ -2,16 +2,16 @@
 // https://api.mercadolibre.com/items/MLA919256646/description
 
 export interface IItemDescriptionResponse {
-  text: string
-  plain_text: string
-  last_updated: string
-  date_created: string
-  snapshot: Snapshot
+  text: string;
+  plain_text: string;
+  last_updated: string;
+  date_created: string;
+  snapshot: Snapshot;
 }
 
 export interface Snapshot {
-  url: string
-  width: number
-  height: number
-  status: string
+  url: string;
+  width: number;
+  height: number;
+  status: string;
 }

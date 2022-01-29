@@ -1,17 +1,17 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { formatCurrency } from '../../../utils/formatCurrency'
-import styles from './item-card.module.scss'
-import { IItem } from '../../../interfaces/IInternalSearchResponse'
+import { formatCurrency } from '../../../utils/formatCurrency';
+import styles from './item-card.module.scss';
+import { IItem } from '../../../interfaces/IInternalSearchResponse';
 
 type Props = {
-  item: IItem
-}
+  item: IItem;
+};
 
 export const ItemCard = ({ item }: Props) => {
-  const toLink = `/items/${item.id}`
+  const toLink = `/items/${item.id}`;
 
   return (
     <div className={styles['item-card']}>
@@ -50,5 +50,5 @@ export const ItemCard = ({ item }: Props) => {
         <span>{item.seller_address}</span>
       </div>
     </div>
-  )
-}
+  );
+};

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-import styles from './skeleton-card.module.scss'
+import styles from './skeleton-card.module.scss';
 
-export const SkeletonCard = () => {
-  return <div className={styles['ui-skeleton-card']}></div>
-}
+export const SkeletonCard = () => (
+  <div className={styles['ui-skeleton-card']} />
+);

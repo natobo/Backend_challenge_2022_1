@@ -1,24 +1,24 @@
 // TODO: refactor code with  SRP (singular responsibility principle)
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from 'next';
 
-import * as MeliEndPoints from '../../../src/common/meli-endponts'
+import * as MeliEndPoints from '../../../src/common/meli-endponts';
 
 // INTERFACES
-import { IInternalItemResponse } from '../../../src/interfaces/IInternalItemResponse'
-import { ICategoryResponse } from '../../../src/interfaces/ICategoryResponse'
-import { ICategory } from '../../../src/interfaces/IInternalSearchResponse'
-import { IItemResponse } from '../../../src/interfaces/IItemResponse'
-import { IItemDescriptionResponse } from '../../../src/interfaces/IItemDescriptionResponse'
+import { IInternalItemResponse } from '../../../src/interfaces/IInternalItemResponse';
+import { ICategoryResponse } from '../../../src/interfaces/ICategoryResponse';
+import { ICategory } from '../../../src/interfaces/IInternalSearchResponse';
+import { IItemResponse } from '../../../src/interfaces/IItemResponse';
+import { IItemDescriptionResponse } from '../../../src/interfaces/IItemDescriptionResponse';
 
 // CONSTANTS
-import { SIGNATURE_AUTHOR } from './../../../src/constants/author-signature'
+import { SIGNATURE_AUTHOR } from '../../../src/constants/author-signature';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
-    const itemRes: IItemResponse = await fetch(
+    const itemRes: IItemResponse = (await fetch(
       `${MeliEndPoints.ITEM_DATA}/${req.query.id}`,
       {
         method: 'GET',
@@ -26,9 +26,9 @@ export default async function handler(
           'Content-Type': 'application/json',
         },
       }
-    ).then((res) => res.json())
+    ).then((res) => res.json())) as IItemResponse;
 
-    const itemDescriptionRes: IItemDescriptionResponse = await fetch(
+    const itemDescriptionRes: IItemDescriptionResponse = (await fetch(
       `${MeliEndPoints.ITEM_DATA}/${req.query.id}/description`,
       {
         method: 'GET',
@@ -37,22 +37,22 @@ export default async function handler(
           'Content-Type': 'application/json',
         },
       }
-    ).then((res) => res.json())
+    ).then((res) => res.json())) as IItemDescriptionResponse;
 
     const categories: ICategory[] = await getCategoriesPathFromRoot(
       itemRes.category_id
-    )
+    );
 
     const data: IInternalItemResponse = await processResponse(
       itemRes,
       itemDescriptionRes,
       categories
-    )
+    );
 
-    res.status(200).json(data)
+    res.status(200).json(data);
   } catch (error) {
-    console.log(error)
-    res.status(500).send('Server Error Response')
+    console.log(error);
+    res.status(500).send('Server Error Response');
   }
 }
 
@@ -78,10 +78,9 @@ async function processResponse(
       title: itemData.title,
       path_from_root: categories,
     },
-  }
+  };
 }
 
 async function getCategoriesPathFromRoot(categoryId: string) {
-
-//RETO CUATRO DIGITE SU CODIGO AQUI
+  // RETO CUATRO DIGITE SU CODIGO AQUI
 }

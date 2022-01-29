@@ -1,13 +1,13 @@
-import React from 'react'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
+import React from 'react';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-import styles from './nav-search.module.scss'
+import styles from './nav-search.module.scss';
 
 export const NavSearch = () => {
   const {
     query: { search },
-  } = useRouter()
+  } = useRouter();
 
   return (
     <form
@@ -37,5 +37,5 @@ export const NavSearch = () => {
         </span>
       </button>
     </form>
-  )
-}
+  );
+};

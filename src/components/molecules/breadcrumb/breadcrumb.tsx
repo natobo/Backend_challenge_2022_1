@@ -1,22 +1,18 @@
-import React from 'react'
-import { ICategory } from '../../../interfaces/IInternalSearchResponse'
+import React from 'react';
+import { ICategory } from '../../../interfaces/IInternalSearchResponse';
 
-import styles from './breadcrumb.module.scss'
+import styles from './breadcrumb.module.scss';
 
 type Props = {
-  categories: ICategory[]
-}
+  categories: ICategory[];
+};
 
-export const Breadcrumb = ({ categories }: Props) => {
-  return (
-    <div className={styles['ui-breadcrumb']}>
-      {categories?.map((item) => {
-        return (
-          <span key={item.id} className={styles['ui-breadcrumb__slug-item']}>
-            {item.name}
-          </span>
-        )
-      })}
-    </div>
-  )
-}
+export const Breadcrumb = ({ categories }: Props) => (
+  <div className={styles['ui-breadcrumb']}>
+    {categories?.map((item) => (
+      <span key={item.id} className={styles['ui-breadcrumb__slug-item']}>
+        {item.name}
+      </span>
+    ))}
+  </div>
+);
